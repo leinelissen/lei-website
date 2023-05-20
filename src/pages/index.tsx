@@ -4,7 +4,6 @@ import GithubIcon from '@/assets/github.svg';
 import LinkedinIcon from '@/assets/linkedin.svg';
 import TwitterIcon from '@/assets/twitter.svg';
 import EnvelopeIcon from '@/assets/envelope-sharp-solid.svg';
-import { motion } from 'framer-motion';
 import Button from '@/components/Button';
 
 const slideInLeft = keyframes`
@@ -67,6 +66,11 @@ const Header = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 `;
 
 const MainFrame = styled.a`
@@ -126,18 +130,6 @@ const Title = styled.div`
         animation-name: ${slideInBottom};
         transform-origin: 'top left';
     }
-`;
-
-const SubTitle = styled.div`
-    position: absolute;
-    right: 0;
-    top: 0;
-    /* background-color: black; */
-    color: white;
-    padding: 36px;
-    max-width: min(25vw, 400px);
-    min-width: 200px;
-    backdrop-filter: grayscale(1) invert(1) brightness(0.25);
 `;
 
 const ButtonRow = styled.div`
